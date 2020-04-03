@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import {ROUTES} from './app.routes';
+import {IconsModule} from './app.icon.module'
 
 import { AppComponent } from './app.component';
 import { CasesComponent } from './cases/cases.component';
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    IconsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],
