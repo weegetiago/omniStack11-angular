@@ -1,1 +1,25 @@
-<p>register works!</p>
+<div class="register-container">
+    <div class="content">
+        <section>
+            <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
+            <h1>Cadastro</h1>
+            <p>Faça aqui seu cadastro, e jude o mundo a ficar melhor.</p>
+            <a class="back-link" [routerLink]="['']">
+                <i-feather name="arrow-left-circle">
+                </i-feather>
+                Fazer login
+            </a>
+        </section>
+        <form action="">
+            <input type="text" placeholder="Nome da ONG">
+            <input type="email" placeholder="E-mail">
+            <input type="number" placeholder="WhastApp">
+            <div className="input-group">
+                <input placeholder="Cidade" />
+
+                <input placeholder="UF" />
+            </div>
+            <button class="button" type="submit">Cadastrar</button>
+        </form>
+    </div>
+</div>

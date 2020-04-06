@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Cases } from './cases.module';
+import { Services } from '../app.service';
 
 @Component({
   selector: 'app-cases',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CasesComponent implements OnInit {
 
-  constructor() { }
+  @Input() cases: Cases;
+
+  casosOng: Cases[] = [];
+
+  constructor(private service: Services)  { }
 
   ngOnInit(): void {
+    this.service.incidentsByOng()
+    //.subscribe(response => console.log(response));
+    .subscribe(response => 
+      {
+        this.casosOng = response;
+        console.log(this.casosOng);
+      });
+      
+    //(err)=> (console.error('Erro teste'= err;))
   }
 
 }

@@ -1,1 +1,25 @@
-<p>cases works!</p>
+<p>cases works X!</p>
+
+<div class="cases-container">
+
+
+    <header>
+        <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
+        <span>Bem vinda, ONG</span>
+        <a class="button" [routerLink]="['/new-case']">
+            Cadastrar novo casos
+        </a>
+        <button type="button">
+            <i-feather name="power">
+            </i-feather>
+        </button>
+    </header>
+    <h1>Casos desta ONG</h1>
+    <ul>
+        <li *ngFor="let caso of casosOng">
+            {{caso.title}}
+            {{caso.description}}
+        </li>
+
+    </ul>
+</div>
