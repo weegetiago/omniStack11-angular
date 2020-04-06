@@ -9,22 +9,18 @@ import { Services } from '../app.service';
 })
 export class CasesComponent implements OnInit {
 
-  @Input() cases: Cases;
-
-  casosOng: Cases[] = [];
+@Input() casosOng: Cases[] = [];
 
   constructor(private service: Services)  { }
 
   ngOnInit(): void {
     this.service.incidentsByOng()
-    //.subscribe(response => console.log(response));
     .subscribe(response => 
       {
         this.casosOng = response;
         console.log(this.casosOng);
       });
       
-    //(err)=> (console.error('Erro teste'= err;))
   }
 
 }

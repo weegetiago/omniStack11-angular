@@ -1,5 +1,3 @@
-<p>cases works X!</p>
-
 <div class="cases-container">
 
 
@@ -15,11 +13,20 @@
         </button>
     </header>
     <h1>Casos desta ONG</h1>
-    <ul>
+    <ul >
         <li *ngFor="let caso of casosOng">
-            {{caso.title}}
-            {{caso.description}}
-        </li>
+            <strong>CASO:</strong>
+            <p>{{caso.title}}</p>
 
+            <strong>DESCRIÇÂO</strong>
+            <p>{{caso.description}}</p>
+
+            <strong>VALOR</strong>
+            <p>{{caso.value}}</p>
+
+            <button type="button">
+                <i-feather name="trash"></i-feather>
+            </button>
+        </li>
     </ul>
 </div>

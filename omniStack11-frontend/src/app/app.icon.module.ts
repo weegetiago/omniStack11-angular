@@ -6,7 +6,8 @@ import {
   Heart,
   Github,
   ArrowLeftCircle,
-  Power
+  Power,
+  Trash
 } from 'angular-feather/icons';
 
 // Select some icons (use an object, not an array)
@@ -16,6 +17,7 @@ const icons = {
   Github,
   ArrowLeftCircle,
   Power,
+  Trash,
 };
 
 @NgModule({
