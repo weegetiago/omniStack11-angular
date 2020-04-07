@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+
+import { NewCase } from './new-case.model';
+import { Services } from '../app.service';
+
 
 @Component({
   selector: 'app-new-case',
@@ -7,9 +12,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCaseComponent implements OnInit {
 
-  constructor() { }
+  formNewCase: FormGroup;
 
-  ngOnInit(): void {
+  constructor(private service: Services) { }
+
+  ngOnInit() {
+    this.formNewCase = new FormGroup({
+      title: new FormControl(''),
+      description: new FormControl(''),
+      value: new FormControl(''),
+    });
   }
+
+  newIncidentsByOng() {
+    let newCase: NewCase = {
+      title: this.formNewCase.controls['title'].value,
+      description: this.formNewCase.controls['description'].value,
+      value: this.formNewCase.controls['value'].value,
+    };
+
+    this.service.newIncidentsByOng(newCase)
+      .subscribe(response => {
+        console.log(response.id)
+      });
+  };
 
 }
