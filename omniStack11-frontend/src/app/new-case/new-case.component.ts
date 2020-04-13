@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 import { NewCase } from './new-case.model';
 import { Services } from '../app.service';
@@ -12,15 +12,19 @@ import { Services } from '../app.service';
 })
 export class NewCaseComponent implements OnInit {
 
-  formNewCase: FormGroup;
 
-  constructor(private service: Services) { }
+  valuePattern = /^[0-9]*$/
+  formNewCase: FormGroup
+
+  constructor(
+    private service: Services,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.formNewCase = new FormGroup({
-      title: new FormControl(''),
-      description: new FormControl(''),
-      value: new FormControl(''),
+    this.formNewCase = this.formBuilder.group({
+      title: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+      description: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+      value: this.formBuilder.control('', [Validators.required, Validators.pattern(this.valuePattern)]),
     });
   }
 

@@ -24,7 +24,7 @@
             <strong>VALOR</strong>
             <p>{{caso.value}}</p>
 
-            <button type="button">
+            <button (click)="deleteCases(caso.id)" type="button">
                 <i-feather name="trash"></i-feather>
             </button>
         </li>

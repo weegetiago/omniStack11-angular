@@ -1,4 +1,4 @@
-<div class="newcase-container" [formGroup]="formNewCase">
+<div class="newcase-container">
     <div class="content">
         <section>
             <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
@@ -10,7 +10,7 @@
                 Casos
             </a>
         </section>
-        <form action="">
+        <form [formGroup]="formNewCase" >
             <input type="text"
             placeholder="Titulo"
             formControlName="title">
@@ -23,7 +23,8 @@
             placeholder="Valor em reais"
             formControlName="value">
 
-            <button class="button" type="submit" (click)="newIncidentsByOng()" >Cadastrar</button>
+            <button class="button" [disabled]="!formNewCase.valid" 
+            (click)="newIncidentsByOng()" >Cadastrar</button>
         </form>
     </div>
 </div>

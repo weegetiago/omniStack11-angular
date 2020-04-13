@@ -29,4 +29,12 @@ export class Services {
             }
         })
     }
+
+     deleteCases(id: string): Observable<any> {
+        return this.http.delete(`${API}/incidents/${id}`, {
+            headers: {
+                Authorization: '2a057067',
+            }
+        })
+    } 
 }

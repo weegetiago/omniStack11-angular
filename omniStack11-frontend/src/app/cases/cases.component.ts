@@ -9,18 +9,29 @@ import { Services } from '../app.service';
 })
 export class CasesComponent implements OnInit {
 
-@Input() casosOng: Cases[] = [];
 
-  constructor(private service: Services)  { }
+  @Input() casosOng: Cases[] = [];
+
+  constructor(private service: Services) { }
 
   ngOnInit(): void {
     this.service.incidentsByOng()
-    .subscribe(response => 
-      {
+      .subscribe(response => {
         this.casosOng = response;
         console.log(this.casosOng);
       });
-      
+
+  }
+
+  deleteCases(id: string) {
+    this.service.deleteCases(id)
+      .subscribe(() => {
+        this.service.incidentsByOng()
+          .subscribe(response => {
+            this.casosOng = response;
+          });
+      });
+    //alert('Clicado em deleteCases')
   }
 
 }
