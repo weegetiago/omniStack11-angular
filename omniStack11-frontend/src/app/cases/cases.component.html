@@ -1,1 +1,32 @@
-<p>cases works!</p>
+<div class="cases-container">
+
+
+    <header>
+        <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
+        <span>Bem vinda, ONG</span>
+        <a class="button" [routerLink]="['/new-case']">
+            Cadastrar novo casos
+        </a>
+        <button type="button"  [routerLink]="['']">
+            <i-feather name="power">
+            </i-feather>
+        </button>
+    </header>
+    <h1>Casos desta ONG</h1>
+    <ul >
+        <li *ngFor="let caso of casosOng">
+            <strong>CASO:</strong>
+            <p>{{caso.title}}</p>
+
+            <strong>DESCRIÇÂO</strong>
+            <p>{{caso.description}}</p>
+
+            <strong>VALOR</strong>
+            <p>{{caso.value}}</p>
+
+            <button (click)="deleteCases(caso.id)" type="button">
+                <i-feather name="trash"></i-feather>
+            </button>
+        </li>
+    </ul>
+</div>

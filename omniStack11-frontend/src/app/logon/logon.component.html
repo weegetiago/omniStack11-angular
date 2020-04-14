@@ -3,14 +3,13 @@
         <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
         <form class="form">
             <h1>Faça o Login</h1>
-            <input 
-            placeholder="ID visitantes: 2a057067" 
-            />
-            <button class="button" type="submit">Entrar</button>
-            <link class="back-link" to="/register" />
-            <i-feather name="arrow-left-circle">
-            </i-feather>
-            Não tenho login
+            <input placeholder="ID visitantes: 2a057067" />
+            <button class="button" type="submit" [routerLink]="['/cases']">Entrar</button>
+            <a class="back-link" [routerLink]="['/register']">
+                <i-feather name="arrow-left-circle">
+                </i-feather>
+                Não tenho login
+            </a>
         </form>
     </section>
     <img class="form" src="assets/img/heroes.png" alt="Heroes" />

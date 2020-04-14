@@ -1,1 +1,24 @@
-<p>new-case works!</p>
+<div class="newcase-container">
+    <div class="content">
+        <section>
+            <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
+            <h1>Cadastro do novo caso</h1>
+            <p>Descreva o caso detalhadamente para encontrar um herói</p>
+            <a class="back-link" [routerLink]="['/cases']">
+                <i-feather name="arrow-left-circle">
+                </i-feather>
+                Casos
+            </a>
+        </section>
+        <form [formGroup]="formNewCase">
+            <input type="text" placeholder="Titulo" formControlName="title">
+
+            <textarea placeholder="Descrição" formControlName="description"></textarea>
+
+            <input type="text" placeholder="Valor em reais" formControlName="value">
+
+            <button [routerLink]="['/cases']" [disabled]="!formNewCase.valid" 
+            (click)="newIncidentsByOng()" class="button">Cadastrar</button>
+        </form>
+    </div>
+</div>

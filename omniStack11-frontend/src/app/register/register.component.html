@@ -1,1 +1,25 @@
-<p>register works!</p>
+<div class="register-container">
+    <div class="content">
+        <section>
+            <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
+            <h1>Cadastro</h1>
+            <p>Faça aqui seu cadastro, e jude o mundo a ficar melhor.</p>
+            <a class="back-link" [routerLink]="['']">
+                <i-feather name="arrow-left-circle">
+                </i-feather>
+                Fazer login
+            </a>
+        </section>
+        <form [formGroup]="formRegister">
+            <input type="text" placeholder="Nome da ONG" formControlName="name">
+            <input type="email" placeholder="E-mail" formControlName="email">
+            <input type="number" placeholder="WhastApp" formControlName="whatsapp">
+            <div className="input-group">
+                <input placeholder="Cidade" formControlName="city" />
+
+                <input placeholder="UF" formControlName="uf" />
+            </div>
+            <button [disabled]="!formRegister.valid" (click)="newRegister()" class="button">Cadastrar</button>
+        </form>
+    </div>
+</div>

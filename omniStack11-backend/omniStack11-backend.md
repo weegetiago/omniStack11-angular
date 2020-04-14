@@ -5,3 +5,4 @@
 -Banco: http://knexjs.org/
 -npx knex init = cria o arquivo de confg do banco
 -Criar as tabelas com Migration CLI = http://knexjs.org/#Migrations
+-npm start = para executar o backend

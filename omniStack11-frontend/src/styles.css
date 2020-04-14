@@ -58,6 +58,11 @@ form textarea{
     line-height: 60px;
     transition: filter .2s;
 }
+.button[disabled]{
+    border: 0;
+    background: #cccccc;
+    color: #666666;
+  }
 
 .button:hover{
     filter: brightness(90%);
