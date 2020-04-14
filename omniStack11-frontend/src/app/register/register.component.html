@@ -10,16 +10,16 @@
                 Fazer login
             </a>
         </section>
-        <form action="">
-            <input type="text" placeholder="Nome da ONG">
-            <input type="email" placeholder="E-mail">
-            <input type="number" placeholder="WhastApp">
+        <form [formGroup]="formRegister">
+            <input type="text" placeholder="Nome da ONG" formControlName="name">
+            <input type="email" placeholder="E-mail" formControlName="email">
+            <input type="number" placeholder="WhastApp" formControlName="whatsapp">
             <div className="input-group">
-                <input placeholder="Cidade" />
+                <input placeholder="Cidade" formControlName="city" />
 
-                <input placeholder="UF" />
+                <input placeholder="UF" formControlName="uf" />
             </div>
-            <button class="button" type="submit">Cadastrar</button>
+            <button [disabled]="!formRegister.valid" (click)="newRegister()" class="button">Cadastrar</button>
         </form>
     </div>
 </div>

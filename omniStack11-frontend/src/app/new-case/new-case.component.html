@@ -10,21 +10,15 @@
                 Casos
             </a>
         </section>
-        <form [formGroup]="formNewCase" >
-            <input type="text"
-            placeholder="Titulo"
-            formControlName="title">
+        <form [formGroup]="formNewCase">
+            <input type="text" placeholder="Titulo" formControlName="title">
 
-            <textarea 
-            placeholder="Descrição"
-            formControlName="description"></textarea>
+            <textarea placeholder="Descrição" formControlName="description"></textarea>
 
-            <input type="text" 
-            placeholder="Valor em reais"
-            formControlName="value">
+            <input type="text" placeholder="Valor em reais" formControlName="value">
 
-            <button class="button" [disabled]="!formNewCase.valid" 
-            (click)="newIncidentsByOng()" >Cadastrar</button>
+            <button [routerLink]="['/cases']" [disabled]="!formNewCase.valid" 
+            (click)="newIncidentsByOng()" class="button">Cadastrar</button>
         </form>
     </div>
 </div>
