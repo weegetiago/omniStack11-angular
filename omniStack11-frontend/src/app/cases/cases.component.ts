@@ -18,7 +18,6 @@ export class CasesComponent implements OnInit {
     this.service.incidentsByOng()
       .subscribe(response => {
         this.casosOng = response;
-        console.log(this.casosOng);
       });
 
   }
