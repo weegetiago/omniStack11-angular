@@ -36,6 +36,5 @@ export class RegisterComponent implements OnInit {
       city: this.formRegister.controls['city'].value,
       uf: this.formRegister.controls['uf'].value,
     }
-    console.log(register)
   };
 }
