@@ -1,3 +1,4 @@
+import { Services } from './../app.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
@@ -15,6 +16,7 @@ export class RegisterComponent implements OnInit {
   formRegister: FormGroup
 
   constructor(
+    private service: Services,
     private formBuilder: FormBuilder
   ) { }
 
@@ -35,6 +37,10 @@ export class RegisterComponent implements OnInit {
       whatsapp: this.formRegister.controls['whatsapp'].value,
       city: this.formRegister.controls['city'].value,
       uf: this.formRegister.controls['uf'].value,
-    }
+    };
+    this.service.newRegister(register)
+    .subscribe(response => {
+      alert(`Seu ID de acesso é: ${response.id}`)
+    })
   };
 }

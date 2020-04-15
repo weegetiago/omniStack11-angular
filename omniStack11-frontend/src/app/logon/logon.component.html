@@ -1,10 +1,11 @@
 <div class="logon-container">
     <section class="form">
         <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
-        <form class="form">
+        <form [formGroup]="formLogon">
             <h1>Faça o Login</h1>
-            <input placeholder="ID visitantes: 2a057067" />
-            <button class="button" type="submit" [routerLink]="['/cases']">Entrar</button>
+            <input placeholder="ID visitantes: 2a057067" type="text" formControlName="id" />
+            <button class="button" (click)="logon()" type="submit" 
+            [routerLink]="['/cases']">Entrar</button>
             <a class="back-link" [routerLink]="['/register']">
                 <i-feather name="arrow-left-circle">
                 </i-feather>

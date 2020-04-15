@@ -1,3 +1,4 @@
+import { Register } from './register/register.model';
 import { NewCase } from './new-case/new-case.model';
 import { API } from './app.api'
 import { HttpClient } from '@angular/common/http';
@@ -6,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Cases } from './cases/cases.module';
+import { Logon } from './logon/logon.model';
 //import { Logon } from './logon/logon.model';
 
 
@@ -38,6 +40,11 @@ export class Services {
         })
     } 
 
-    newRegister(){
+    newRegister(register: Register): Observable<any>{
+        return this.http.post(`${API}/ongs`, register,{})
+    }
+
+    logon(logon: Logon): Observable<any>{
+        return this.http.post(`${API}/sessao`,logon)
     }
 }

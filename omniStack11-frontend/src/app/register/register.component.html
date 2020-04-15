@@ -19,7 +19,8 @@
 
                 <input placeholder="UF" formControlName="uf" />
             </div>
-            <button [disabled]="!formRegister.valid" (click)="newRegister()" class="button">Cadastrar</button>
+            <button [disabled]="!formRegister.valid" (click)="newRegister()" 
+            class="button" [routerLink]="['']">Cadastrar</button>
         </form>
     </div>
 </div>

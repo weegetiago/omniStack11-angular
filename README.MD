@@ -1,0 +1,2 @@
+- Depois de terminar o back e o front na Omnistack11 da rocketseat.com.br. Decidi fazer uma versão em angula do app "Be The Hero"
+- npm start para iniciar o back e o front

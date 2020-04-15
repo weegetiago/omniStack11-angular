@@ -9,6 +9,9 @@ import { Services } from '../app.service';
 })
 export class CasesComponent implements OnInit {
 
+  /* const ongId = localStorage.getItem('ongId')
+  const ongName = localStorage.getItem('ongName') */
+
 
   @Input() casosOng: Cases[] = [];
 
