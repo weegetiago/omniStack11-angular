@@ -4,7 +4,7 @@
         <form [formGroup]="formLogon">
             <h1>Faça o Login</h1>
             <input placeholder="ID visitantes: 2a057067" type="text" formControlName="id" />
-            <button class="button" (click)="logon()" type="submit" 
+            <button class="button" [disabled]="!formLogon.valid" (click)="logon()" type="submit" 
             [routerLink]="['/cases']">Entrar</button>
             <a class="back-link" [routerLink]="['/register']">
                 <i-feather name="arrow-left-circle">

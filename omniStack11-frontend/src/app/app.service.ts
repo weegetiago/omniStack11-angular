@@ -8,8 +8,9 @@ import { Observable } from 'rxjs';
 
 import { Cases } from './cases/cases.module';
 import { Logon } from './logon/logon.model';
-//import { Logon } from './logon/logon.model';
 
+const ongId = localStorage.getItem('ongId');
+const ongName = localStorage.getItem('ongName')
 
 @Injectable()
 export class Services {
@@ -19,7 +20,7 @@ export class Services {
     incidentsByOng(): Observable<Cases[]> {
         return this.http.get<Cases[]>(`${API}/perfil`, {
             headers: {
-                Authorization: '2a057067',
+                Authorization: ongId,
             }
         })
     }
@@ -27,7 +28,7 @@ export class Services {
     newIncidentsByOng(newCase: NewCase): Observable<any> {
         return this.http.post(`${API}/incidents`, newCase, {
             headers: {
-                Authorization: '2a057067',
+                 Authorization: ongId,
             }
         })
     }
@@ -35,7 +36,7 @@ export class Services {
      deleteCases(id: string): Observable<any> {
         return this.http.delete(`${API}/incidents/${id}`, {
             headers: {
-                Authorization: '2a057067',
+                 Authorization: ongId,
             }
         })
     } 

@@ -3,11 +3,11 @@
 
     <header>
         <img class="form" src="assets/img/logo.svg" alt="Be The Hero" />
-        <span>Bem vinda, ONG</span>
+        <span>Bem vinda {{ongName}} </span>
         <a class="button" [routerLink]="['/new-case']">
             Cadastrar novo casos
         </a>
-        <button type="button"  [routerLink]="['']">
+        <button (click)="fazerLogout()" type="button"  [routerLink]="['']">
             <i-feather name="power">
             </i-feather>
         </button>

@@ -19,7 +19,7 @@ export class LogonComponent implements OnInit {
 
   ngOnInit(): void {
     this.formLogon = this.formBuilder.group({
-      id: this.formBuilder.control('', [Validators.required, Validators.minLength(1)])
+      id: this.formBuilder.control('', [Validators.required, Validators.minLength(8)])
     })
   }
 

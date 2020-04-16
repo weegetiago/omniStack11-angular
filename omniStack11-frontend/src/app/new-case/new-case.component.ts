@@ -37,7 +37,6 @@ export class NewCaseComponent implements OnInit {
 
     this.service.newIncidentsByOng(newCase)
       .subscribe(response => {
-        console.log(response.id)
       });
   };
 

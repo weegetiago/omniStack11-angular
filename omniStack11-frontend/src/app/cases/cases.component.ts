@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Cases } from './cases.module';
 import { Services } from '../app.service';
 
+const ongName = localStorage.getItem('ongName');
+
 @Component({
   selector: 'app-cases',
   templateUrl: './cases.component.html',
@@ -9,9 +11,7 @@ import { Services } from '../app.service';
 })
 export class CasesComponent implements OnInit {
 
-  /* const ongId = localStorage.getItem('ongId')
-  const ongName = localStorage.getItem('ongName') */
-
+  ongName = ongName;
 
   @Input() casosOng: Cases[] = [];
 
@@ -33,7 +33,9 @@ export class CasesComponent implements OnInit {
             this.casosOng = response;
           });
       });
-    //alert('Clicado em deleteCases')
   }
 
+  fazerLogout() {
+    localStorage.clear();
+  }
 }
